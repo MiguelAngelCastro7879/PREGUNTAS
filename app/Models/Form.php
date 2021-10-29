@@ -9,4 +9,9 @@ class Form extends Model
 {
     use HasFactory;
     protected $form="form";
+    public $timestamps=false;
+    protected $fillable = [
+        'nombre',
+        'descripcion',
+    ];
 }

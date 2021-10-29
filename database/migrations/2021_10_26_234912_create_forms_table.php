@@ -15,8 +15,8 @@ class CreateFormsTable extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');//este es el usuario que creo el form
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('descripcion');
         });
     }
 

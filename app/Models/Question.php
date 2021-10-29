@@ -9,4 +9,9 @@ class Question extends Model
 {
     use HasFactory;
     protected $question='question';
+    public $timestamps=false;
+    protected $fillable = [
+        'pregunta',
+        'respuesta_correcta',
+    ];
 }
