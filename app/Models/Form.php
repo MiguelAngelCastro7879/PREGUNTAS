@@ -14,4 +14,14 @@ class Form extends Model
         'nombre',
         'descripcion',
     ];
+    public function usuarios()
+    {
+        return $this->belongsToMany(User::class, 'forms_users');
+    }
+    public function preguntas()
+    {
+        return $this->belongsToMany(Question::class, 'forms_questions');
+    }
+    
+    
 }

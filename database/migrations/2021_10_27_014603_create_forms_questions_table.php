@@ -14,7 +14,6 @@ class CreateFormsQuestionsTable extends Migration
     public function up()
     {
         Schema::create('forms_questions', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('question_id');
             $table->foreign('question_id')->references('id')->on('questions');
             $table->unsignedBigInteger('form_id');

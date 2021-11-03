@@ -14,4 +14,12 @@ class Question extends Model
         'pregunta',
         'respuesta_correcta',
     ];
+    public function forms()
+    {
+        return $this->belongsToMany(Form::class, 'forms_questions');
+    }
+    public function respuesta()
+    {
+        return $this->belongsTo(Answer::class);
+    }
 }

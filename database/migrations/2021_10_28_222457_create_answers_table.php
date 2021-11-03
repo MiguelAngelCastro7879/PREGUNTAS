@@ -14,11 +14,11 @@ class CreateAnswersTable extends Migration
     public function up()
     {
         Schema::create('answers', function (Blueprint $table) {
-            $table->unsignedBigInteger('forms_user_id');
             $table->unsignedBigInteger('question_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('respuesta');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('question_id')->references('id')->on('questions');
-            $table->foreign('forms_user_id')->references('id')->on('forms_users');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateAnswersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions_user');
+        Schema::dropIfExists('answers');
     }
 }

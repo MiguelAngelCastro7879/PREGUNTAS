@@ -10,8 +10,8 @@ class AnswersController extends Controller
     
     public function create(Request $request){
         $respuesta = Answer::create([
-            'forms_user_id'=>$request->user_form,
-            'question_id'=>$request->pregunta,
+            'forms_questions_id'=>$request->forms_questions,
+            'user_id'=>$request->usuario,
             'respuesta'=>$request->respuesta,
         ]);
         return response()->json([

@@ -14,7 +14,6 @@ class CreateFormsUsersTable extends Migration
     public function up()
     {
         Schema::create('forms_users', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('form_id');

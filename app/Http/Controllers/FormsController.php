@@ -20,7 +20,11 @@ class FormsController extends Controller
     public function readAll(){
         return Forms::all();
     }
-    public function queryAnsiosa(){
-        
+    public function formXpregunta($id){
+        $formulario = Form::find($id);
+        $preguntas=$formulario->preguntas;
+        return response()->json([
+            "formulario"=>$formulario
+        ],201); 
     }
 }
